@@ -26,5 +26,24 @@ public class Program2 {
 		System.out.print("Enter department id: ");
 		Department dep = depDao.findById(sc.nextInt());
 		System.out.println(dep);
+		
+		System.out.println("\n===== Test 3: deleteById =====");
+		System.out.print("Enter department id: ");
+		depDao.deleteById(sc.nextInt());
+		System.out.println("Department deleted!");
+		
+		System.out.println("\n===== Test 4: update =====");
+		System.out.print("Enter department id: ");
+		dep.setId(sc.nextInt());
+		System.out.print("Enter department's new name (NO SPACES ALLOWED): ");
+		dep.setName(sc.next());
+		depDao.update(dep);
+		System.out.println("Update Completed!");
+		
+		System.out.println("\n===== Test 5: insert =====");
+		System.out.print("Enter new department name (NO SPACES ALLOWED): ");
+		dep.setName(sc.next());
+		depDao.insert(dep);
+		System.out.println("Department created successfully! ID = " + dep.getId());
 	}
 }
