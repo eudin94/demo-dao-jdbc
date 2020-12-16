@@ -101,7 +101,7 @@ public class SellerDaoJDBC implements SellerDAO {
 			int rows = st.executeUpdate();
 			
 			if (rows == 0) {
-				throw new DbException("Id does not exist! Deletion aborted!");
+				throw new DbException("ID does not exist! Deletion aborted!");
 			}
 		}
 		catch (SQLException e) {
